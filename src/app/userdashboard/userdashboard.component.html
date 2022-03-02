@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">User Management System</a>
+      <div class="">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)= "addUser()">Add User
+          </button>
+      </div>
+      
+
+    </div>
+  </nav>
+  <table class="table container">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = " let row of userData">
+        <th>{{row.id}}</th>
+        <td>{{row.firstName}}</td>
+        <td>{{row.lastName}}</td>
+        <td>{{row.gmail}}</td>
+        <td>{{row.gender}}</td>
+        <td>
+                
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"class="btn btn-success ms-3" (click)="editUser(row)">
+                Edit
+            </button>
+            <button class="btn btn-danger ms-3" (click)="deleteUser(row)">
+                Delete
+            </button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+ 
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">User Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <form [formGroup] = "userformVal" (ngSubmit)="onSubmit()">
+                            <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                                    <input type="text" formControlName = "firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <!-- <span class="text-danger"
+                                *ngIf="userformVal.get('firstName').errors.required">
+                                First Name is required
+                            </span>   -->
+                                    <!-- <span class="text-danger"
+                                *ngIf="userformValControl.['firstName'].touched || submitted) && userformValControl.['firstName'].errors?.['required']">
+                                First Name is required
+                            </span>  -->
+                                  </div> 
+                                  <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                                        <input type="text" formControlName = "lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        
+                                      </div> 
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Email address</label>
+                              <input type="email" formControlName = "gmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              
+                            </div>
+                            <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Gender</label>
+                                    <input type="text" formControlName = "gender" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    
+                                  </div>
+                            
+                            
+                          </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button"  id = "close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" *ngIf = "showAdd" class="btn btn-primary" (click)= "postUserdetails()">Add User</button>
+              <button type="button"  *ngIf = "showUpdate" class="btn btn-primary" (click)= "updateUsers()">Update User</button>
+            </div>
+          </div>
+        </div>
+      </div>

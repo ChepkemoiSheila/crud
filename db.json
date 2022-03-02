@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": 7,
+      "firstName": "test",
+      "lastName": "test",
+      "gmail": "test@gmail.com",
+      "gender": "test"
+    },
+    {
+      "id": 9,
+      "firstName": "sheila",
+      "lastName": "sheila",
+      "gmail": "sheilachepkemoi97@gmail.com",
+      "gender": "sheila"
+    },
+    {
+      "id": 10,
+      "firstName": "sheil",
+      "lastName": "sheila",
+      "gmail": "sheila",
+      "gender": "sheila"
+    },
+    {
+      "id": 11,
+      "firstName": "sheila",
+      "lastName": "sheila",
+      "gmail": "sheilachepkemoi97@gmail.com",
+      "gender": "sheila"
+    },
+    {
+      "id": 12,
+      "firstName": "che",
+      "lastName": "sheila",
+      "gmail": "sheilachepkemoi97@gmail.com",
+      "gender": "sheila"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
